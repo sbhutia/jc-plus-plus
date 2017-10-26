@@ -2,8 +2,14 @@
     "use strict"; // Start of use strict
   
     $('#find-jobs').click(function(){
-      $('#user-profile').hide();
-      $('#job-results').show();
+      $.ajax({
+        url: "/testData/data.json",
+        data: "data",
+        success: function(response){
+            $('#user-profile').hide();
+            $('#job-results').show();
+        },
+      });
     });
   
   var recognition = new webkitSpeechRecognition();
