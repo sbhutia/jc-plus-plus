@@ -2,6 +2,7 @@
     "use strict"; // Start of use strict
   
     $('#find-jobs').click(function(){
+      $('#user-profile').hide();
       $('#job-results').show();
     });
 
