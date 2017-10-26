@@ -2,10 +2,13 @@
   display: none
 }
 .jumbotron{
-  background-color: #CAEBF2
+  background-color: #015249; 
+  color : white;
+  margin-bottom : 0px;
 }
-body{
-  background-color : #EFEFEF
+#user-profile .container, #job-results .container{
+  background-color : #EFEFEF;
+  padding-bottom : 100px;
 }
 label{
   font-size : 150%
