@@ -1,0 +1,24 @@
+{
+  "name": "supreme-couscous",
+  "description": "my website",
+  "main": "main.js",
+  "authors": [
+    "sbhutia"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sbhutia/supreme-couscous",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.7",
+    "font-awesome": "~4.6.3"
+  }
+}

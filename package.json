@@ -1,0 +1,32 @@
+{
+  "name": "jobcentre-plus-plus",
+  "version": "1.0.0",
+  "description": "my website",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "sbhutia",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-express": "^1.4.1"
+  },
+  "dependencies": {
+    "bower": "^1.7.9",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-express": "^1.4.1",
+    "grunt-parallel": "^0.5.1"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "grunt"
+  }
+}
