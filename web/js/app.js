@@ -6,6 +6,15 @@
         url: "/testData/data.json",
         data: "data",
         success: function(response){
+            console.log(JSON.stringify(response));
+            $( response.jobMatches ).each(function( index, jobItem ) {
+              console.log( index + ": " + JSON.stringify($( this )) );
+              $("#job-cards").append('<div class="col-sm-6 col-md-4"><div class="thumbnail"><div class="caption"><h3>Job Name : '+ 
+                                     jobItem.jobTitle + '</h3><p>Job Description : '+
+                                     jobItem.jobDescription +'</p><p>Match percentage : '+
+                                     jobItem.jobMatch + '</p><p><a href="#" class="btn btn-primary" role="button">Apply</a></p></div></div>');
+            });
+            
             $('#user-profile').hide();
             $('#job-results').show();
         },

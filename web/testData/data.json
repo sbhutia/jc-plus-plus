@@ -1,0 +1,19 @@
+{
+	"personalityInsights": {},
+	"jobMatches": [{
+			"jobTitle": "Job 1",
+			"jobDescription": "This is a test job description",
+			"jobMatch": "80%"
+		},
+		{
+			"jobTitle": "Job 2",
+			"jobDescription": "This is a test job description",
+			"jobMatch": "80%"
+		},
+		{
+			"jobTitle": "Job 3",
+			"jobDescription": "This is a test job description 3",
+			"jobMatch": "80%"
+		}
+	]
+}
