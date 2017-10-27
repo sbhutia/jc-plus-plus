@@ -53,13 +53,14 @@
   $('#record-about-user').click(function(){
       if(recording){
         recognition.stop();
-        
+        $('#record-about-user').css("color", "black");
         return;
       }
     final_transcript = '';
     recognition.lang = 'en-GB';
     recording = true;
-    recognition.start();    
+    recognition.start();
+    $('#record-about-user').css("color", "red");
   });
   
   recognition.onerror = function(event) {
