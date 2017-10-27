@@ -57,7 +57,7 @@
                       <div class="form-group">
                         <label for="about-user">Tell us about yourself</label> <span id="record-about-user" class="glyphicon glyphicon-volume-up"></span>
                         <p>Tell us about your likes and dislikes, hobbies, past experience and any other information. The more you tell us, the easier it will be for us to find matching jobs.</p>
-                        <textarea class="form-control" id="about-user" rows="7"></textarea>
+                        <textarea class="form-control" id="about-user" rows="10"></textarea>
                       </div>
                     </form>
                     <button id="find-jobs" type="submit" class="btn btn-primary btn-lg" >Find Matching Jobs <span class="glyphicon glyphicon-arrow-right"></span></button>
@@ -68,30 +68,35 @@
     
     <section id="job-results">
         <div class="container">
-            <div class="row">              
+            <div class="row">
+              <div class="col-lg-12">
                   <h3>Your Personality Attributes</h3>
+                </div>
             </div>
           
             <div id="personality-attributes">
               <div class="row">
-              <div class="col-lg-2"><strong>Agreeableness</strong></div>
-                <div class="col-lg-4">
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                      60%
+                <div class="col-lg-2"><strong>Agreeableness</strong></div>
+                  <div class="col-lg-4">
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                      </div>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>
                       
           <div class="row">
+              <div class="col-lg-12">
                 <h3>Your Job Matches</h3>
             </div>
+          </div>
           
           <div class="row" id="job-cards">
 
-          </div>           
+          </div>
+          <a href="/"><button id="find-jobs" type="submit" class="btn btn-primary btn-lg" >Search Again<span class="glyphicon glyphicon-arrow-left"></span></button></a>
         </div>
     </section>
     

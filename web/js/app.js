@@ -4,19 +4,34 @@
     $('#find-jobs').click(function(){
       $('.loading').show();
       $.ajax({
+        method: "GET",
         url: "/api/jobSearch",
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
         data: {"name" : $('#user-name').val(), "desc" : $('#about-user').val()},
         success: function(response){
-            console.log(JSON.stringify(response));
-            $( response.jobMatches ).each(function( index, jobItem ) {
+            
+            var parsedResponse = response;
+            console.log(JSON.stringify(parsedResponse));
+            $( parsedResponse.jobMatches ).each(function( index, jobItem ) {
               console.log( index + ": " + JSON.stringify($( this )) );
+              
+              var match;
+              
+              if(jobItem.correlation < 2){
+                match = "High"
+              } else if (jobItem.correlation < 3){
+                match = "Medium"
+              }else{
+                match = "Low"
+              }
               $("#job-cards").append('<div class="col-sm-6 col-md-4"><div class="thumbnail"><div class="caption"><h3>Job Name : '+ 
-                                     jobItem.job_title + '</h3><p>Job Description : '+
-                                     jobItem.correlation +'</p><p>Match percentage : '+
-                                     jobItem.description + '</p><p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Apply</a></p></div></div>');
+                                     jobItem.job_title + '</h3><p class="description">Job Description : '+
+                                     jobItem.description +'</p><p>Match : '+
+                                     match + '</p><p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Apply</a></p></div></div>');
             });
           
-            $( response.personality).each(function( index, personalityItem ) {
+            $( parsedResponse.personality).each(function( index, personalityItem ) {
               console.log( index + ": " + JSON.stringify($( this )) );
               $("#personality-attributes").append('<div class="row"><div class="col-lg-2"><strong>'+ personalityItem.name +'</strong></div><div class="col-lg-4"><div class="progress"><div class="progress-bar" role="progressbar" style="width: '+ personalityItem.percentile * 100+'%;">'+ personalityItem.percentile * 100+'%</div></div></div></div>');
             });       

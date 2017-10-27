@@ -6,13 +6,23 @@
   color : white;
   margin-bottom : 0px;
 }
+.jumbotron small{
+  color: #ccc
+}
 #user-profile .container, #job-results .container{
   background-color : #EFEFEF;
-  padding-bottom : 100px;
+  padding-bottom : 50px;
 }
 label{
   font-size : 150%
 }
 .loading{
   display: none
+}
+.description{
+  height: 120px;
+  overflow: scroll
+}
+.thumbnail{
+  height: 300px
 }
