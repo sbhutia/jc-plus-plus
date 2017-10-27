@@ -2,9 +2,10 @@
     "use strict"; // Start of use strict
   
     $('#find-jobs').click(function(){
+      $('.loading').show();
       $.ajax({
-        url: "/testData/data.json",
-        data: "data",
+        url: "/api/jobSearch",
+        data: {"name" : $('#user-name').val(), "desc" : $('#about-user').val()},
         success: function(response){
             console.log(JSON.stringify(response));
             $( response.jobMatches ).each(function( index, jobItem ) {
@@ -15,6 +16,7 @@
                                      jobItem.jobMatch + '</p><p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Apply</a></p></div></div>');
             });
             
+            $('.loading').hide();
             $('#user-profile').hide();
             $('#job-results').show();
         },

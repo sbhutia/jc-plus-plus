@@ -23,7 +23,8 @@ module.exports = function(grunt){
         server: {
           options: {
             port: process.env.PORT || 9000,
-            bases: path.resolve(__dirname, 'web')
+            server: path.resolve('./server'),
+            //bases: path.resolve(__dirname, 'web')
           }
         }
       }

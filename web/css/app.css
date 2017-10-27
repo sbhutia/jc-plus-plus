@@ -13,3 +13,6 @@
 label{
   font-size : 150%
 }
+.loading{
+  display: none
+}
