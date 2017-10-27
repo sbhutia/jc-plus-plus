@@ -11,10 +11,15 @@
             $( response.jobMatches ).each(function( index, jobItem ) {
               console.log( index + ": " + JSON.stringify($( this )) );
               $("#job-cards").append('<div class="col-sm-6 col-md-4"><div class="thumbnail"><div class="caption"><h3>Job Name : '+ 
-                                     jobItem.jobTitle + '</h3><p>Job Description : '+
-                                     jobItem.jobDescription +'</p><p>Match percentage : '+
-                                     jobItem.jobMatch + '</p><p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Apply</a></p></div></div>');
+                                     jobItem.job_title + '</h3><p>Job Description : '+
+                                     jobItem.correlation +'</p><p>Match percentage : '+
+                                     jobItem.description + '</p><p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Apply</a></p></div></div>');
             });
+          
+            $( response.personality).each(function( index, personalityItem ) {
+              console.log( index + ": " + JSON.stringify($( this )) );
+              $("#personality-attributes").append('<div class="row"><div class="col-lg-2"><strong>'+ personalityItem.name +'</strong></div><div class="col-lg-4"><div class="progress"><div class="progress-bar" role="progressbar" style="width: '+ personalityItem.percentile * 100+'%;">'+ personalityItem.percentile * 100+'%</div></div></div></div>');
+            });       
             
             $('.loading').hide();
             $('#user-profile').hide();
